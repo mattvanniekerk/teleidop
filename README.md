@@ -1,6 +1,10 @@
 # Teleidop
 Use Investec's Programmable Card feature to send transaction notifications via Telegram
 
+From Greek: 
+ - **tele-** "at a distance"
+ - **eidopo-** "to notify"
+
 ## Requirements
 1. Investec account
 2. Telegram bot (https://core.telegram.org/bots)
