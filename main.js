@@ -1,7 +1,7 @@
 /**
- * Sends a message to Telegram using the Telegram Bot API.
- * @param {string} message - The message to be sent.
- * @returns {Promise<void>} - A promise that resolves when the message is sent.
+ * Send a message to Telegram using the Telegram Bot API
+ * @param {string} message the message to be sent
+ * @returns {Promise<void>} a promise that resolves when the message is sent
  */
 const sendMessageToTelegram = async (message) => {
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -27,22 +27,9 @@ const sendMessageToTelegram = async (message) => {
 };
 
 /**
- * Retrieves the time zone for a given city.
- * @param {string} city - The name of the city.
- * @returns {string} - The time zone for the city.
- */
-const getTimeZone = (city) => {
-    const cityToTimeZoneMap = {
-        "Cape Town": "Africa/Johannesburg",
-        // Add other city-to-timezone mappings as needed
-    };
-    return cityToTimeZoneMap[city] || 'UTC'; // Default to UTC if city is not found
-};
-
-/**
- * Formats a transaction object into a human-readable message.
- * @param {object} transaction - The transaction object to be formatted.
- * @returns {string} - The formatted transaction message.
+ * Format a transaction object into a human-readable message
+ * @param {object} transaction the transaction object to be formatted
+ * @returns {string} the formatted transaction message
  */
 const formatTransactionMessage = (transaction) => {
     return `
@@ -62,8 +49,8 @@ const formatTransactionMessage = (transaction) => {
 /**
  * This function runs during the card transaction authorization flow.
  * It has a limited execution time, so keep any code short-running.
- * @param {object} authorization - The authorization object for the transaction.
- * @returns {Promise<boolean>} - A promise that resolves to true if the transaction should proceed, false otherwise.
+ * @param {object} authorization the authorization object for the transaction
+ * @returns {Promise<boolean>} a promise that resolves to true if the transaction should proceed, false otherwise.
  */
 const beforeTransaction = async (authorization) => {
     console.log(authorization);
@@ -74,8 +61,8 @@ const beforeTransaction = async (authorization) => {
 
 /**
  * This function runs after an approved transaction.
- * @param {object} transaction - The approved transaction object.
- * @returns {Promise<void>} - A promise that resolves when the necessary actions are completed.
+ * @param {object} transaction the approved transaction object.
+ * @returns {Promise<void>} a promise that resolves when the necessary actions are completed.
  */
 const afterTransaction = async (transaction) => {
     console.log(transaction);
@@ -85,8 +72,8 @@ const afterTransaction = async (transaction) => {
 
 /**
  * This function runs after a declined transaction.
- * @param {object} transaction - The declined transaction object.
- * @returns {Promise<void>} - A promise that resolves when the necessary actions are completed.
+ * @param {object} transaction the declined transaction object.
+ * @returns {Promise<void>} a promise that resolves when the necessary actions are completed.
  */
 const afterDecline  = async (transaction) => {
     console.log(transaction);
