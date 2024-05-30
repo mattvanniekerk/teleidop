@@ -1,4 +1,4 @@
-# investec-telegram-alerts
+# Teleidop
 Use Investec's Programmable Card feature to send transaction notifications via Telegram
 
 ## Requirements
